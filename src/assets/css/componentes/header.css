@@ -38,7 +38,7 @@
 }
 
 .menu-header-background {
-  background-color: #00000020;
+  background-color: #1ce03de3;
   position: fixed;
   top: 0;
   left: -100vw;
@@ -87,7 +87,7 @@
   border-bottom: 1px solid var(--cor-divisao);
 }
 
-.menu-item--entrar {
+.menu-item__entrar {
   background-color: var(--primary-color);
   color: var(--contrast-light-color);
   border: none;
@@ -118,6 +118,7 @@
   }
 
   .menu-header {
+    display: flex;
     justify-self: flex-start;
     position: static;
     width: fit-content;
@@ -140,11 +141,11 @@
 
   .menu-item {
     border: none;
-    padding: 0;
+    padding: 0.5rem;
     margin-right: 1rem;
   }
 
-  .menu-item--entrar {
+  .menu-item__entrar {
     border-radius: 2rem;
     padding: 1rem 1.5rem;
   }
