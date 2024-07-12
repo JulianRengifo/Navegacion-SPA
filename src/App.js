@@ -2,6 +2,7 @@ import './assets/css/base/base.css';
 import './assets/css/componentes/card.css'
 import Home from "./pages/Home"
 import Sobre from "./pages/Sobre"
+import Page404 from './pages/Pages404';
 
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
@@ -18,6 +19,7 @@ function App() {
           {/*Luego se agrega element que es el elemento que se quiere mostar, en este caso es Home*/}
           <Route path='/' element={<Home/>}/>
           <Route path='/Sobre' element={<Sobre/>}/>
+          <Route path='*' element={<Page404/>}/>
         </Routes>
       </BrowserRouter>
     </>
