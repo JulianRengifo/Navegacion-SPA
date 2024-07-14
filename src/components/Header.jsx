@@ -1,10 +1,24 @@
+import React, { useState } from 'react';
 import image from "../assets/img/doguito.svg"
 import "../assets/css/componentes/header.css"
 
+
 const Header = () => {
+
+    const [menuActive, setMenuActive] = useState(false)
+
+    const toggleMenu = () => {
+        //proporciona para actualizar el estado
+        //! es el operador lógico de negación en JavaScript. Toma un valor booleano y lo invierte. Si menuActive es true, !menuActive será false, y viceversa.
+        setMenuActive(!menuActive);
+    };
+
     return(
         <header className="header container">
-            <div className="menu-hamburguer">
+            {/*${menuActive ? 'menu-hamburguer--active' : ''}: Esta es una expresión ternaria que añade condicionalmente la clase menu-hamburguer--active:*/}
+            {/*Si menuActive es true, se añade la clase menu-hamburguer--active.
+            Si menuActive es false, no se añade ninguna clase adicional (se añade una cadena vacía).*/}
+            <div className={`menu-hamburguer ${menuActive ? 'menu-hamburguer--active' : ''}`} onClick={toggleMenu}>
                 <span className="menu-hamburguer__icon"/>
             </div>
             <div className="header-containerr">
@@ -14,9 +28,10 @@ const Header = () => {
                 </a>
             </div>
 
-            <nav className="menu-header">
+            <nav className={`menu-header ${menuActive ? 'menu-header--ativo' : ''}`}>
+                <button className="menu-header__close" onClick={toggleMenu}></button>
                 <ul className="menu-items">
-                    <li><a className="meu-item menu-item__entrar" href="#">Entar</a></li>
+                    <li><a className="menu-item menu-item__entrar" href="#">Entrar</a></li>
                     <li><a className="menu-item" href="#">Productos</a></li>
                     <li><a className="menu-item" href="/">Blog</a></li>
                     <li><a className="menu-item" href="/sobre">Sobre</a></li>
@@ -24,7 +39,7 @@ const Header = () => {
             </nav>
             <div className="menu-header-background"></div>
         </header>
-    )
+    );
 }
 
 export default Header

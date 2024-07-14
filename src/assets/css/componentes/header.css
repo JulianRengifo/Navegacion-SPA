@@ -16,7 +16,7 @@
 
 .menu-hamburguer--active .menu-hamburguer__icon {
   transform: rotate(90deg);
-  transition: 0.2s;
+  transition: 0.25s;
 }
 
 .menu-hamburguer__icon {
@@ -38,7 +38,7 @@
 }
 
 .menu-header-background {
-  background-color: #1ce03de3;
+  backdrop-filter: blur(2px);
   position: fixed;
   top: 0;
   left: -100vw;
@@ -49,7 +49,7 @@
 .menu-header {
   position: fixed;
   left: -100vw;
-  top: 0;
+  top: 9vh;
   background-color: var(--contrast-light-color);
   width: 70vw;
   height: 100vh;
@@ -57,10 +57,10 @@
   font-size: var(--font-size-menu-header-item);
   font-weight: var(--font-menu-header-item);
   z-index: 10;
-  transition: 0.25s;
+  transition: 0.5s;
 }
 
-.menu-header__fechar {
+.menu-header__close {
   position: absolute;
   right: -2.5rem;
   top: 0.5rem;
@@ -71,8 +71,9 @@
   background-color: var(--primary-color);
 }
 
-.menu-header__fechar::before {
+.menu-header__close::before {
   content: "X";
+  cursor: pointer;
   position: absolute;
   left: 50%;
   top: 50%;
@@ -87,6 +88,11 @@
   border-bottom: 1px solid var(--cor-divisao);
 }
 
+.menu-item:hover{
+  cursor: pointer;
+  background-color: rgb(18, 214, 214);
+}
+
 .menu-item__entrar {
   background-color: var(--primary-color);
   color: var(--contrast-light-color);
@@ -95,8 +101,8 @@
 
 .menu-header--ativo {
   left: 0;
-  top: 0;
-  transition: 0.25s;
+  top: 9vh;
+  transition: 0.5s;
 }
 
 .menu-header--ativo + .menu-header-background {
