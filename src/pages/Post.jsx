@@ -19,9 +19,11 @@ const Post = ({url}) => {
     const navigate = useNavigate()
 
     /*muestra los detalles de un post basado en el id de la URL, cada vez que el id cambie 
-    (cuando navegas a un post diferente), se realizará una nueva solicitud para obtener los datos del nuevo post*/
+    (cuando navegas a un post diferente), se realizará una nueva solicitud para obtener los datos del nuevo post.
+    Usamos catch para manejar erorres durante la busqueda de datos redirigiendo a la pagina error 404*/
     useEffect(() => {
         buscar(`/posts/${id}`, setPosts).catch(() => {
+            //Con ayuda de useNavigate redirige a la pagina error 404
             navigate("/not-found")
         })
     }, [id])
