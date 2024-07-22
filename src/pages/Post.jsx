@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react"
 import "../assets/css/componentes/card.css"
-import { useParams } from "react-router-dom"
+import { useParams, useNavigate } from "react-router-dom"
 import { buscar } from "../api/api"
 
 //importamos useParams para obtener el identificador de la url
@@ -16,11 +16,14 @@ const Post = ({url}) => {
     //useParams es un hook proporcionado por React Router.Se utiliza para acceder a los parámetros de la URL en un componente funcional de React.
     const {id} = useParams()
 
+    const navigate = useNavigate()
 
     /*muestra los detalles de un post basado en el id de la URL, cada vez que el id cambie 
     (cuando navegas a un post diferente), se realizará una nueva solicitud para obtener los datos del nuevo post*/
     useEffect(() => {
-        buscar(`/posts/${id}`, setPosts)
+        buscar(`/posts/${id}`, setPosts).catch(() => {
+            navigate("/not-found")
+        })
     }, [id])
 
     return(
