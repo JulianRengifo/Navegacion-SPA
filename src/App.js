@@ -4,6 +4,7 @@ import Home from "./pages/Home"
 import Sobre from "./pages/Sobre"
 import Page404 from './pages/Pages404';
 import Header from './components/Header';
+import Post from './pages/Post';
 
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
@@ -24,6 +25,9 @@ function App() {
           {/*Luego se agrega element que es el elemento que se quiere mostar, en este caso es Home*/}
           <Route path='/' element={<Home/>}/>
           <Route path='/Sobre' element={<Sobre/>}/>
+          {/*/posts/:id': Especifica que esta ruta coincidirá con cualquier URL que comience con /posts/ seguido de un valor dinámico. El :id es el identificator de cada posts
+          element={<Post/>} es elemento que se mostrara cuando se accede a esa ruta */}
+          <Route path='/posts/:id' element={<Post/>}/>
           <Route path='*' element={<Page404/>}/>
         </Routes>
       </BrowserRouter>
