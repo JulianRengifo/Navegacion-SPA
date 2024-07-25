@@ -27,7 +27,7 @@ function App() {
           {/*/posts/:id': Especifica que esta ruta coincidirá con cualquier URL que comience con /posts/ seguido de un valor dinámico. El :id es el identificator de cada posts
           element={<Post/>} es elemento que se mostrara cuando se accede a esa ruta */}
           <Route path='/posts/:id' element={<Post/>}/>
-          <Route path='/categoria/:id' element={<Categoria/>}/>
+          <Route path='/categoria/:id/*' element={<Categoria/>}/>
           <Route path='*' element={<Page404/>}/>
         </Routes>
       </BrowserRouter>

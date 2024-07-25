@@ -3,6 +3,7 @@ import "../assets/css/blog.css"
 import { buscar } from "../api/api";
 import ListCategories from "../components/ListCategories";
 import ListPosts from "../components/ListPosts";
+import SubCategoria from "./SubCategoria";
 import { useParams, Routes, Route, Link, useResolvedPath } from "react-router-dom";
 
 const Categoria = () => {
@@ -53,6 +54,7 @@ const Categoria = () => {
                 {/*El componente ListPosts, que lista los posts filtrados por la categoría especificada por el id en la URL. 
             La URL de la API para obtener los posts se construye dinámicamente usando el id.*/}
                 <Route path="/" element= {<ListPosts url={`/posts?categoria=${id}`}/>}/>
+                <Route path="/:subcategoria" element={<SubCategoria/>}/>
             </Routes>
         </>
     )
