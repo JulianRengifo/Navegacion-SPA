@@ -26,20 +26,23 @@ const ListPosts = ({url}) => {
                 // Tenemos un arrglo y usamos map para recorrelo uno por uno
                 posts.map(post => {
                     // Destructuramos cada post obteniendo id, title...
-                    const {id, title, metadescription, categoria} = post;
+                    const {id, title, metadescription, body, categoria} = post;
                     // /posts/${id}` nos agrega un identificador a cada posts y que al seleccionar una card nos muestre el detalle de esa card
                     // post-card--${categoria} modifica el comportamiento de la categoria, si la card es roja o azul
                     // La propiedad key es necesaria en listas generadas dinámicamente para ayudar a React a identificar y gestionar cada elemento de manera eficiente.
                     return <Link to={`/posts/${id}`} className={`post__card post-card--${categoria}`} key={id}>
-                        <article>
+                        <article className="card">
                             <h3 className="post-card__title">
                                 {/*muestra el título del post*/}
                                 {title}
                             </h3>
-                            <p className="post-card__meta">
+                            <p className="post-card__body">
+                                {body}
+                            </p>
+                            <a className="post-card__meta">
                                 {/*muestra la metadescripción del post*/}
                                 {metadescription}
-                                </p>
+                                </a>
                         </article>
                     </Link>
                 })

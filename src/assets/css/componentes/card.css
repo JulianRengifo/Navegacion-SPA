@@ -1,12 +1,19 @@
 .card {
+  box-sizing: border-box; /*hace que el borde y el padding se incluyan en las dimensiones totales del elemento, evitando que se expanda al agregar un borde.*/
+  border: 0.1rem solid transparent; /* Borde inicial transparente */
   background-color: var(--contrast-light-color);
   border-radius: 10px;
   box-shadow: var(--shadow);
   width: 100%;
   max-width: 45rem;
-  padding: 1.75rem;
+  padding: 1rem;
   box-sizing: border-box;
-  margin-bottom: 1rem;
+  margin-top: 0.1rem;
+  margin-bottom: 0.1rem;
+}
+
+.card:hover{
+  border-color: rgb(18, 214, 214); /* Cambia solo el color del borde */
 }
 
 .title__card {
@@ -34,6 +41,12 @@
   font-size: var(--font-size-card-post-title);
   font-weight: var(--font-card);
   margin-bottom: 1rem;
+}
+
+.post-card__body{
+  font-weight: 800;
+  margin-bottom: 1rem;
+  line-height: 1.3rem;
 }
 
 .post-card__meta {

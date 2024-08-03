@@ -34,9 +34,24 @@ const Header = () => {
                 <button className="menu-header__close" onClick={toggleMenu}></button>
                 <ul className="menu-items">
                     <li><Link className="menu-item menu-item__entrar" to="#">Entrar</Link></li>
-                    <li><Link className="menu-item" to="#">Productos</Link></li>
-                    <li><Link className="menu-item" to="/">Blog</Link></li>
-                    <li><Link className="menu-item" to="/sobre">Sobre</Link></li>
+                    <li>
+                        <Link className="menu-item" to="#">
+                            <span className='productos-icon'/>
+                            Productos
+                        </Link>
+                    </li>
+                    <li>
+                        <Link className="menu-item" to="/">
+                            <span className='blog-icon'></span>
+                            Blog
+                        </Link>
+                    </li>
+                    <li>
+                        <Link className="menu-item" to="/sobre">
+                            <span className='sobre-icon'/>
+                            Sobre
+                        </Link>
+                    </li>
                 </ul>
             </nav>
             <div className="menu-header-background"></div>

@@ -27,6 +27,31 @@
   background-size: contain;
 }
 
+.productos-icon {
+  width: 2rem; /* Ajusta el tamaño del icono */
+  height: 2rem; /* Ajusta el tamaño del icono */
+  margin-right: 0.5rem; /* Ajusta el espacio entre el icono y el texto */
+  background-image: url(../../img/productos.png);
+  background-size: cover; /* Ajusta la imagen al contenedor */
+}
+
+.blog-icon{
+  width: 2rem;
+  height: 2rem;
+  margin-right: 0.5rem;
+  background-image: url(../../img/blog.png);
+  background-size: cover;
+}
+
+.sobre-icon{
+  width: 2rem;
+  height: 2rem;
+  margin-right: 0.5rem;
+  background-image: url(../../img/sobre.png);
+  background-size: cover;
+}
+
+
 .header__logo {
   width: 3rem;
 }
@@ -81,7 +106,8 @@
 }
 
 .menu-item {
-  display: block;
+  display: flex;
+  align-items: center;
   padding-top: 1.5rem;
   padding-left: 1rem;
   padding-bottom: 1.5rem;
@@ -90,6 +116,7 @@
 
 .menu-item:hover{
   cursor: pointer;
+  border-radius: 1rem;
   background-color: rgb(18, 214, 214);
 }
 
@@ -123,6 +150,10 @@
     display: none;
   }
 
+  .menu-header__close{
+    display: none;
+  }
+
   .menu-header {
     display: flex;
     justify-self: flex-start;
@@ -149,6 +180,18 @@
     border: none;
     padding: 0.5rem;
     margin-right: 1rem;
+  }
+
+  .productos-icon{
+    display: none;
+  }
+
+  .blog-icon{
+    display: none;
+  }
+
+  .sobre-icon{
+    display: none;
   }
 
   .menu-item__entrar {
